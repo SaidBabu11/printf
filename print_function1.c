@@ -51,5 +51,7 @@ int print_strings(va_list value)
  */
 int print_Percent(va_list value)
 {
+	UNUSED(types);
+
 	return (write(1, "%%", 1));
 }
