@@ -33,14 +33,7 @@ int print_strings(va_list value)
 			write(1, " ", 1);
 		return (len);
 	}
-	else
-	{
-		while (str[len] != '\0')
-			len++;
-		for (i = 0; i < len; i++)
-			write(1, &str[i], 1);
-		return (len);
-	}
+	return (write(1, str, 1));
 }
 
 /**
