@@ -13,8 +13,10 @@ int handle_printf(const char *fmt, int *ind, va_list list)
 		{'c', print_char}, {'s', print_strings}, {'%', print_Percent}, {'\0', NULL}
 	};
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
+	{
 		if (fmt[*ind] == fmt_types[i].fmt)
 			return (fmt_types[i].fnc(list));
+	}
 	if (fmt_types[i].fmt == '\0')
 	{
 		if (fmt[*ind] == '\0')
