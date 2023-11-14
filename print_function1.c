@@ -33,7 +33,7 @@ int print_strings(va_list value)
 			write(1, " ", 1);
 		return (len);
 	}
-	return (write(1, str, 1));
+	return (write(1, str, len));
 }
 
 /**
