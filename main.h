@@ -4,6 +4,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+#define UNUSED(x) (void)(x)
+
 /**
  * struct format_inp - Struct op
  *
