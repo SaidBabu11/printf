@@ -31,6 +31,6 @@ int _printf(const char *format, ...);
 int print_char(va_list valu);
 int print_strings(va_list value);
 int print_Percent(va_list value);
-int handle_printf(const char *format_inp, int *ind, va_list list);
+int handle_printf(const char *fmt, int *ind, va_list list);
 
 #endif /*MAIN_H*/
