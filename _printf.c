@@ -7,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, print = 0;
+	int i, print = 0, char_print = 0;
 	va_list arg;
 
 	if (format == NULL)
@@ -16,14 +16,18 @@ int _printf(const char *format, ...)
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
+		{
 			write(1, &format, 1);
+			char_print++;
+		}
 		else
 		{
 			print = handle_printf(format, &i, arg);
 			if (print == -1)
 				return (-1);
+			char_print += print;
 		}
 	}
 	va_end(arg);
-	return (print);
+	return (char_print);
 }
