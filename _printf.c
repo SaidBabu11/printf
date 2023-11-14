@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			++i;
 			print = handle_printf(format, &i, arg);
 			if (print == -1)
 				return (-1);
