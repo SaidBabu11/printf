@@ -48,3 +48,35 @@ int print_Percent(va_list value)
 
 	return (write(1, "%%", 1));
 }
+
+/**
+ * print_int - Print integer
+ * @values: List of arguments
+ * @buffer: Buffer array
+ * Return: No. chars printed
+ */
+int print_int(va_list values, char buffer[])
+{
+	int i = BUFF_SIZE - 2, len = 0;
+	long int n = va_arg(values, long int);
+	unsigned long int num;
+
+	if (n == 0)
+		buffer[i--] = '0';
+	buffer[BUFF_SIZE - 1] = '\0';
+	num = (unsigned long int)n;
+
+	if (n < 0)
+	{
+		num = (unsigned long int)((-1) * n);
+	}
+
+	while (num > 0)
+	{
+		buffer[i--] = (num % 10) + '0';
+		num /= 10;
+	}
+	i++;
+	len = BUFF_SIZE - i - 1;
+	return (write(1, &num, len));
+}

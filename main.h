@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 #define UNUSED(x) (void)(x)
+#define BUFF_SIZE 1024
 
 /**
  * struct format_inp - Struct op
@@ -32,5 +33,6 @@ int print_char(va_list valu);
 int print_strings(va_list value);
 int print_Percent(va_list value);
 int handle_printf(const char *fmt, int *ind, va_list list);
+int print_int(va_list values, char buffer[]);
 
 #endif /*MAIN_H*/

@@ -10,7 +10,8 @@ int handle_printf(const char *fmt, int *ind, va_list list)
 {
 	int i, printed_chars = -1;
 	fmt_t fmt_types[] = {
-		{'c', print_char}, {'s', print_strings}, {'%', print_Percent}, {'\0', NULL}
+		{'c', print_char}, {'s', print_strings}, {'%', print_Percent},
+		{'i', print_int}, {'d', print_int}, {'\0', NULL}
 	};
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
 	{
